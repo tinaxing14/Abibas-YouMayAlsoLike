@@ -1,0 +1,25 @@
+const ymalBigMockData = [
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html', liked: true},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'FV2808', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/2654f10f58e045c2a029ab7d00db4040_9366/FV2808_00_plp_standard.jpg', title: 'Superstar Shoes', price: 100, href: 'https://www.adidas.com/us/superstar-shoes/FV2808.html'},
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'FV2808', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/2654f10f58e045c2a029ab7d00db4040_9366/FV2808_00_plp_standard.jpg', title: 'Superstar Shoes', price: 100, href: 'https://www.adidas.com/us/superstar-shoes/FV2808.html'},
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'FV2808', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/2654f10f58e045c2a029ab7d00db4040_9366/FV2808_00_plp_standard.jpg', title: 'Superstar Shoes', price: 100, href: 'https://www.adidas.com/us/superstar-shoes/FV2808.html'},
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'FV2808', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/2654f10f58e045c2a029ab7d00db4040_9366/FV2808_00_plp_standard.jpg', title: 'Superstar Shoes', price: 100, href: 'https://www.adidas.com/us/superstar-shoes/FV2808.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+	{productId: 'EG4957', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/d699a097bfb846298334aad80120f0f2_9366/EG4957_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4957.html'},
+];
+
+const ymalSmallMockData = [
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html', liked: true},
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html', liked: true},
+	{productId: 'EG4960', image: 'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy/71d8a38f532442a6a31faae700d3e37c_9366/EG4960_00_plp_standard.jpg', title: 'Superstar Shoes', price: 80, href: 'https://www.adidas.com/us/superstar-shoes/EG4960.html', liked: true}
+];
+
+export { ymalBigMockData, ymalSmallMockData };

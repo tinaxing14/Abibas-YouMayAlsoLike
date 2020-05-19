@@ -1,0 +1,11 @@
+package-lock.json
+**/node_modules/**
+**/__snapshots__/**
+**/coverage/**
+mysql.user
+mysql.pass
+server/db/mysql_config.js
+.DS_Store
+.jest.config.js.swp
+app.bundle.js
+public/app.bundle.js

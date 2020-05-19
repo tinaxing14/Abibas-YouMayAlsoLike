@@ -1,0 +1,7 @@
+module.exports = {
+  host: process.env.DB_HOST || 'mysql',
+  user: '[DB_USER]',
+  password: '[DB_PASS]',
+  database: 'adidas',
+  debug: ['ComQueryPacket']
+};

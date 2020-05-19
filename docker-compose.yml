@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  related_info:
+    build: .
+    depends_on:
+      - 'mysql'
+    ports:
+      - '3002:3002'
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_USER_FILE: /seed/mysql.user
+      MYSQL_PASSWORD_FILE: /seed/mysql.pass 
+      MYSQL_ROOT_PASSWORD_FILE: /seed/mysql.pass
+      MYSQL_DATABASE: adidas
+    volumes:
+      - type: bind
+        source: ./data
+        target: /docker-entrypoint-initdb.d/
+      - type: bind
+        source: ./seed
+        target: /seed
