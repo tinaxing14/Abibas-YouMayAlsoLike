@@ -1,11 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
 const product = require('./routes/product');
 const like = require('./routes/like');
 const feedback = require('./routes/feedback');
 const app = express();
 const PORT = process.env.INFO_SERVICE_PORT || 3002;
 
+app.use(cors())
+app.use(morgan('tiny'));
+app.use(express.json());
 app.use(express.static('./public'));
 
 //product route
