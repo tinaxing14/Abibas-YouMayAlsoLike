@@ -16,7 +16,7 @@
 {
   "id": "String",
   "title": "String",
-  "image": "String",
+  "imagess": "String",
   "price": "Number",
   "href": "String"
 }
@@ -35,11 +35,10 @@
 {
   "id": "String",
   "title": "String",
-  "image": "String URL",
+  "images": "String URL",
   "price": "Number",
   "href": "String URL",
-  "sizes": "Array",
-  "relatedProducts": "Array of product IDs",
+  "related_products": "Array of product IDs",
 }
 ```
 
@@ -50,7 +49,7 @@
 **Path Parameters:**
 
 - `id` shoes id
-- `userid` user id
+- `userid` users id
 
 **Success Status Code:** `201`
 
@@ -70,11 +69,10 @@
 ```json
 {
   "title": "String",
-  "image": "String URL",
+  "images": "String URL",
   "price": "Number",
   "href": "String URL",
-  "sizes": "Array",
-  "relatedProducts": "Array of product IDs",
+  "related_products": "Array of product IDs",
 }
 ```
 
