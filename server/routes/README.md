@@ -22,28 +22,6 @@
 }
 ```
 
-### Get CompleteTheLook Products
-
-- GET `/api/shoes/:id/completelook`
-
-**Path Parameters:**
-
-- `id` shoes id
-
-**Success Status Code:** `200`
-
-**Returns:** JSON
-
-```json
-{
-  "id": "String",
-  "title": "String",
-  "image": "String",
-  "price": "Number",
-  "href": "String",
-  "sizes": "Array"
-}
-```
 
 ### Add Shoes Products
 
@@ -62,7 +40,6 @@
   "href": "String URL",
   "sizes": "Array",
   "relatedProducts": "Array of product IDs",
-  "completeTheLook": "Array of product IDs"
 }
 ```
 
@@ -98,7 +75,6 @@
   "href": "String URL",
   "sizes": "Array",
   "relatedProducts": "Array of product IDs",
-  "completeTheLook": "Array of product IDs"
 }
 ```
 
