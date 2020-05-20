@@ -66,6 +66,18 @@
 }
 ```
 
+### Add likes to shoes
+
+- POST `/api/shoes/:id/likes/:userid`
+
+**Path Parameters:**
+
+- `id` shoes id
+- `userid` user id
+
+**Success Status Code:** `201`
+
+
 ### Update shoes info
 
 - PATCH `/api/shoes/:id`
@@ -100,13 +112,3 @@
 
 **Success Status Code:** `204`
 
-### Add likes to shoes
-
-- POST `/api/shoes/:id/likes/:userid`
-
-**Path Parameters:**
-
-- `id` shoes id
-- `userid` user id
-
-**Success Status Code:** `201`
