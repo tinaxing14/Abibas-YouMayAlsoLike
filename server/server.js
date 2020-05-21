@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const product = require('./routes/product');
-const like = require('./routes/like');
-const additem = require('./routes/additem.js');
-const deleteitem = require('./routes/deleteitem.js');
+const getProduct = require('./routes/getProduct');
+const likeProduct = require('./routes/likeProduct');
+const addProduct = require('./routes/addProduct.js');
+const deleteProduct = require('./routes/deleteProduct.js');
 
 
 
@@ -17,18 +17,18 @@ app.use(express.json());
 app.use(express.static('./public'));
 
 //product route
-app.use('/product', product);
+app.use('/product', getProduct);
 
 //like route
-app.use('/like', like);
+app.use('/like', likeProduct);
 
 //additem route
 
-app.use('/additem', additem);
+app.use('/additem', addProduct);
 
 //deleteitem route
 
-app.use('/deleteitem', deleteitem);
+app.use('/deleteitem', deleteProduct);
 
 
 
