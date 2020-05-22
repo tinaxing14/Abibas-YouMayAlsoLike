@@ -1,19 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/abibas', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-mongoose.connection.on("connected", (err) => {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log('mongoDB connected!')
-  }
-  
-});
-
 //Schema for shoes and Users collections
 const Schema = mongoose.Schema;
 
@@ -32,7 +18,6 @@ const Users = new Schema({
 });
 
 // create models 
-
 const User = mongoose.model('User', Users, 'User');
 const Shoe = mongoose.model('Shoe', Shoes, 'Shoe');
 
