@@ -1,4 +1,4 @@
-// inserting data to mongoDB
+// inserting small dataset to mongoDB
 
 var seeder = require('mongoose-seed');
 const { User, Shoe } = require('./mongodb_schema.js')
