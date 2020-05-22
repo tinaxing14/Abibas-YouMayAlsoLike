@@ -9,3 +9,4 @@ server/db/mysql_config.js
 .jest.config.js.swp
 app.bundle.js
 public/app.bundle.js
+data/MongoData
