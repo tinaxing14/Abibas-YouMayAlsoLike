@@ -7,7 +7,7 @@ const ObjectsToCsv = require('objects-to-csv');
 const randomnames = fakerator();
 
 //data base entries
-const entries = 10000
+const entries = 100000
 
 // helper functions to generate random data
 const generateShoesId = () => {
@@ -111,24 +111,30 @@ const generateFullShoesArr = () => {
 const fullShoesArr = generateFullShoesArr();
 //console.log(fullShoesArr)
 
-// code to write csv file
-// (async () => {
-//   const csv = new ObjectsToCsv(fullShoesArr);
-//   await csv.toDisk('./MongoData/shoes.csv');
-//   console.log('wirting csv file completed!')
-// })();
-
-
 //code to write json file on disk - 50 files
-for (var i = 0; i < 50; i ++) {
-  var shoedata = generateFullShoesArr()
-  fs.writeFileSync(`/Users/TinaXING/Downloads/data/shoes${i}.json`, JSON.stringify(shoedata, null, 0));
-}
+// for (var i = 0; i < 10; i ++) {
+//   var shoedata = generateFullShoesArr()
+//   fs.writeFileSync(`/Users/TinaXING/Downloads/data/shoes${i}.json`, JSON.stringify(shoedata, null, 0));
+//   console.log('one shoes json file completed')
+//   var userdata = generateUsersObjArr()
+//   fs.writeFileSync(`/Users/TinaXING/Downloads/data/users${i}.json`, JSON.stringify(userdata, null, 0));
+//   console.log('one usrs json file completed')
+// }
 
-for (var j = 0; j < 10; j ++) {
-  var userdata = generateUsersObjArr()
-  fs.writeFileSync(`/Users/TinaXING/Downloads/data/users${j}.json`, JSON.stringify(userdata, null, 0));
-}
+//code to write csv file
+
+(async () => {
+  for (var x = 0; x < 10; x++) {
+    const csv = new ObjectsToCsv(generateFullShoesArr());
+    await csv.toDisk(`./MongoData/shoes${x}.csv`);
+    console.log('one shoes csv file completeted')
+    const csv2 = new ObjectsToCsv(generateFullShoesArr());
+    await csv2.toDisk(`./MongoData/users${x}.csv`);
+    console.log('one users csv file completeted')
+  }
+  console.log('wirting csv file completed!')
+
+})();
 
 
 // code to assign more ram to run data generation file
