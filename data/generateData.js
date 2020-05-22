@@ -1,7 +1,13 @@
+
 const randomstring = require('randomstring');
+const fakerator = require('fakerator');
+const fs = require('fs');
+const ObjectsToCsv = require('objects-to-csv');
+
+const randomnames = fakerator();
 
 //data base entries
-const entries = 100
+const entries = 1000000
 
 // helper functions to generate random data
 const generateShoesId = () => {
@@ -24,10 +30,7 @@ const generatePrice = () => {
 }
 
 const generateUsers = () => {
-  var name = randomstring.generate({
-    length:8,
-    charset:'alphabetic'
-  });
+  var name = randomnames.names.name();
   return name;
 }
 
@@ -65,18 +68,18 @@ const generateUsersObjArr = () => {
 
 const usersObjArr = generateUsersObjArr();
 
-const image = require('./fetchImageURLs.js')
-const imageArr = image.imageArr;
+const imageArr = require('./imageURLS.json')
+
 
 const generateShoesArr = () => {
   var arr = [];
   for( let i = 0; i < entries; i++) {
     var shoeObj = {
-      id: shoesIdArr[Math.floor(Math.random() * entries)],
-      title: generateTitles(),
-      images: imageArr[Math.floor(Math.random() * imageArr.length)],
-      price: generatePrice(),
-      href: 'https://www.adidas.com/us'
+      "id": shoesIdArr[Math.floor(Math.random() * entries)],
+      "title": generateTitles(),
+      "images": imageArr[Math.floor(Math.random() * imageArr.length)],
+      "price": generatePrice(),
+      "href": 'https://www.adidas.com/us'
     }
     arr.push(shoeObj);
   }
@@ -85,25 +88,28 @@ const generateShoesArr = () => {
 }
 
 const shoesArr = generateShoesArr();
+const shoesArrcopy = generateShoesArr();
 const generateRelatedShoesArr = () => {
   var arr = [];
   for (var i = 0; i < 12; i++) {
-    arr.push(shoesArr[Math.floor(Math.random() * shoesArr.length)])
+    arr.push(shoesArrcopy[Math.floor(Math.random() * shoesArrcopy.length)])
   }
   return arr;
 }
 
 const generateFullShoesArr = () => {
   return shoesArr.map((item) => {
-    return item.relatedProducts = generateRelatedShoesArr()
+    return item["relatedProducts"] = generateRelatedShoesArr();
   });
 }
 
 const fullShoesArr = generateFullShoesArr();
 
+(async () => {
+  const csv = new ObjectsToCsv(fullShoesArr);
+  await csv.toDisk('./MongoData/shoes.csv');
+  console.log('wirting csv file completed!')
+})();
+
+
 module.exports = { fullShoesArr, usersObjArr };
-
-
-
-
-

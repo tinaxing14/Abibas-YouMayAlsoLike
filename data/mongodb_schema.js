@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/abibas', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
+mongoose.connect('mongodb://localhost/abibas', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-// mongoose.connection.on("connected", (err) => {
-//   if(err) {
-//     console.log(err);
-//   } else {
-//     console.log('mongoDB connected!')
-//   }
+mongoose.connection.on("connected", (err) => {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log('mongoDB connected!')
+  }
   
-// });
+});
 
 //Schema for shoes and Users collections
 const Schema = mongoose.Schema;
@@ -55,7 +55,6 @@ user.save((err) => {
     console.log('data saved!!')
   }
 });
-
 
 var Shoe = mongoose.model('Shoes', Shoes);
 var shoe = new Shoe ({

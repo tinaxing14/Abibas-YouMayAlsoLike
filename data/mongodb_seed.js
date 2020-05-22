@@ -1,6 +1,10 @@
+// inserting data to mongoDB
+
 var seeder = require('mongoose-seed');
 const { User, Shoe } = require('./mongodb_schema.js')
-const {fullShoesArr, usersObjArr} = require('./seedData.js');
+const {fullShoesArr, usersObjArr} = require('./generateData.js');
+const { parse } = require('flatted');
+const data1 = require('./MongoData/shoe0.json')
 
 const data = [
   {
@@ -9,7 +13,7 @@ const data = [
   },
   {
     'model': 'Shoe',
-    'documents': fullShoesArr
+    'documents': parse(data1)
   }
 ];
 
