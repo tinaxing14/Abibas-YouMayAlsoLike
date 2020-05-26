@@ -1,7 +1,5 @@
 const randomstring = require('randomstring');
 const fakerator = require('fakerator');
-const fs = require('fs');
-const ObjectsToCsv = require('objects-to-csv');
 const randomnames = fakerator();
 
 
@@ -48,11 +46,11 @@ const shoesIdArr = generateShoesIdArr();
 const generateRelatedProductsData = () => {
   var arr = [];
   for (var i = 0; i < 12; i++) {
-    arr.push(shoesIdArr[Math.floor(Math.random()* shoesIdArr.length)])
+    arr.push(Math.floor(Math.random()* entries));
   }
   var string = JSON.stringify(arr);
   //change array to string with "{}" for postgres array format.
-  string = string.replace("[", "{").replace("]", "}")
+  string = string.replace("[", "{").replace("]", "}");
   return string;
 }
 
