@@ -16,7 +16,7 @@
 {
   "id": "String",
   "title": "String",
-  "imagess": "String",
+  "images": "String",
   "price": "Number",
   "href": "String"
 }
