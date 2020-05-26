@@ -33,7 +33,6 @@
 
 ```json
 {
-  "id": "String",
   "title": "String",
   "images": "String URL",
   "price": "Number",
