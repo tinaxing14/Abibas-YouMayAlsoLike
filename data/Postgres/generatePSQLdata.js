@@ -5,6 +5,9 @@ const ObjectsToCsv = require('objects-to-csv');
 const randomnames = fakerator();
 
 
+//base entries
+var entries = 20000;
+
 //generate postgres data
 const generateShoesId = () => {
   const combinations = ['A', 'B', 'C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -30,8 +33,6 @@ var name = randomnames.names.name();
 return name;
 }
 
-//base entries
-var entries = 20000;
 
 const generateShoesIdArr = () => {
   let shoeIds = {};
@@ -49,7 +50,10 @@ const generateRelatedProductsData = () => {
   for (var i = 0; i < 12; i++) {
     arr.push(shoesIdArr[Math.floor(Math.random()* shoesIdArr.length)])
   }
-  return arr;
+  var string = JSON.stringify(arr);
+  //change array to string with "{}" for postgres array format.
+  string = string.replace("[", "{").replace("]", "}")
+  return string;
 }
 
 const imageArr = require('../imageURLS.json')
@@ -59,7 +63,7 @@ const generateShoesArr = () => {
   var arr = [];
   for( let i = 0; i < entries; i++) {
     var shoeObj = {
-      "id": shoesIdArr[Math.floor(Math.random() * entries)],
+      "shoe_id": shoesIdArr[Math.floor(Math.random() * shoesIdArr.length)],
       "title": generateTitles(),
       "images": imageArr[Math.floor(Math.random() * imageArr.length)],
       "price": generatePrice(),
@@ -76,6 +80,7 @@ var shoesArr = generateShoesArr();
 const generateShoesData = () => {
   return shoesArr.map(item => {
     item['related_products'] = generateRelatedProductsData();
+
     return item;
   })
   
@@ -84,44 +89,26 @@ const generateShoesData = () => {
 
 //user base entries 
 
-var userEntries = 10000
-const generateUsersData = () => {
+const generateUsersData = (n) => {
   var arr = [];
-  for (var i =0; i < userEntries; i ++) {
-    var obj = {username: generateUsers()}
+  for (var i =0; i < n; i ++) {
+    var obj = {users_name: generateUsers()}
     arr.push(obj);
   }
   return arr;
 }
 
-const generateUserLikesData = () => {
+const generateUserLikesData = (n) => {
   var arr =[];
-  for (var i = 0; i < userEntries; i ++) {
-    var userid = Math.floor(Math.random() * (userEntries+2));
-    var shoesid = Math.floor(Math.random() * (entries));
-    var obj = { userid: userid ,shoesid: shoesid}
+  for (var i = 0; i < n; i ++) {
+    var userid = Math.floor(Math.random() * (n+2)) + 1;
+    var shoesid = Math.floor(Math.random() * (entries)) + 1;
+    var obj = { users_id: userid ,shoes_id: shoesid}
     arr.push(obj)
   }
   return arr;
 }
 
-//writing 10 csv files for shoes, one for others
 
-(async () => {
-  for (var x = 0; x < 10; x ++) {
-    const csv = new ObjectsToCsv(generateShoesData());
-    await csv.toDisk(`./PostgresData/shoes${x}.csv`);
-    console.log('one shoes csv file completeted')
-  }
+module.exports = {generateUserLikesData, generateUsersData, generateShoesData}
 
-  const csv2 = new ObjectsToCsv(generateUsersData());
-  await csv2.toDisk(`./PostgresData/users.csv`);
-  console.log('users csv file completeted');
-
-  const csv3 = new ObjectsToCsv(generateUserLikesData());
-  await csv3.toDisk(`./PostgresData/usersLikes.csv`);
-  console.log('usersLikes csv file completeted');
-
-  console.log('wirting csv file completed!');
-
-})();
