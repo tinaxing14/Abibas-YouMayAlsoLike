@@ -32,7 +32,8 @@
 **Request Body**: Expects JSON with the following keys.
 
 ```json
-{
+{ 
+  "shoe_id":"String",
   "title": "String",
   "images": "String URL",
   "price": "Number",
@@ -55,7 +56,7 @@
 
 ### Update shoes info
 
-- PATCH `/api/shoes/:id`
+- PUT `/api/shoes/update/:id`
 
 **Path Parameters:**
 
@@ -63,10 +64,10 @@
 
 **Success Status Code:** `204`
 
-**Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
+**Request Body**: Expects JSON with all of the following keys
 
 ```json
-{
+{ "shoe_id": "String",
   "title": "String",
   "images": "String URL",
   "price": "Number",
