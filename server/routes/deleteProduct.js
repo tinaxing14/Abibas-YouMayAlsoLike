@@ -1,16 +1,17 @@
 const express = require('express');
-const db = require('../db');
+const model = require('../../data/Postgres/model.js');
 const router = express.Router();
 
-router.put('/:productid', (req, res) => {
-	db.likeProduct(req.params.productid, ( err, results) => {
+router.delete('/:productid', (req, res) => {
+  model.deleteProduct(req.params.productid, (err, results) => {
     if (err) {
       console.log(err);
       res.status(500).end();
     } else {
-      res.status(200).json(results);
+      console.log(results)
+      res.status(204).json('deleted');
     }
-	});
+  })
 });
 
 module.exports = router;

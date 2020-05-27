@@ -5,6 +5,7 @@ const getProduct = require('./routes/getProduct');
 const likeProduct = require('./routes/likeProduct');
 const addProduct = require('./routes/addProduct.js');
 const deleteProduct = require('./routes/deleteProduct.js');
+const updateProduct = require('./routes/updateProduct.js')
 
 
 
@@ -16,25 +17,24 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.static('./public'));
 
-//product route
-app.use('/product', getProduct);
+//get product route
+app.use('/api/shoes', getProduct);
 
 //like route
-app.use('/like', likeProduct);
+app.use('/api/shoes', likeProduct);
 
-//additem route
+//add item route
 
-app.use('/additem', addProduct);
+app.use('/api/shoes', addProduct);
 
-//deleteitem route
+//delete item route
 
-app.use('/deleteitem', deleteProduct);
+app.use('/api/shoes', deleteProduct);
 
+//update item route
 
+app.use('/api/shoes/update', updateProduct);
 
-app.get('/', (req, res) => {
-	res.status(200).send('OK get request');
-})
 
 app.listen(PORT, () => {
   console.log('server is listening on PORT', PORT)

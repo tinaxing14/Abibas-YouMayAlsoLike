@@ -1,14 +1,15 @@
 const express = require('express');
-const db = require('../db');
 const router = express.Router();
+const model = require('../../data/Postgres/model.js');
 
-router.put('/:productid', (req, res) => {
-	db.likeProduct(req.params.productid, ( err, results) => {
+router.post('/:id/likes/:userid', (req, res) => {
+	model.likeProduct(req.params, ( err, results) => {
     if (err) {
       console.log(err);
       res.status(500).end();
     } else {
-      res.status(200).json(results);
+      console.log(results)
+      res.status(201).json(results);
     }
 	});
 });
