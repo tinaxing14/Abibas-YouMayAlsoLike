@@ -104,8 +104,96 @@ module.exports = {
 };
 
 
+/* sample results:
+getProduct: 
+
+[
+    {
+        "id": 17254,
+        "title": "Super RNhVi shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EG0420_00_plp_standard.jpg",
+        "price": 94,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 16153,
+        "title": "Super umpQa shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EG0752_00_plp_standard.jpg",
+        "price": 86,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 5381,
+        "title": "Super phaWu shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/FW5477_00_plp_standard.jpg",
+        "price": 333,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 13726,
+        "title": "Super MZIRv shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EG0752_00_plp_standard.jpg",
+        "price": 190,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 10706,
+        "title": "Super XYInf shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EG0716_00_plp_standard.jpg",
+        "price": 212,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 8389,
+        "title": "Super TmlrO shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EF6883_00_plp_standard.jpg",
+        "price": 324,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 5107,
+        "title": "Super jYVaQ shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/BY4027_00_plp_standard.jpg",
+        "price": 237,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 11078,
+        "title": "Super ODVLK shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/FX3600_00_plp_standard.jpg",
+        "price": 140,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 8220,
+        "title": "Super TwTFw shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/FV2809_00_plp_standard.jpg",
+        "price": 113,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 554,
+        "title": "Super LdRjJ shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/FV3299_00_plp_standard.jpg",
+        "price": 168,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 11858,
+        "title": "Super kkWnU shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/EG0747_00_plp_standard.jpg",
+        "price": 369,
+        "href": "https://www.adidas.com/us"
+    },
+    {
+        "id": 4889,
+        "title": "Super kUylj shoes",
+        "images": "https://abibas-pictures.s3.us-east-2.amazonaws.com/FV3021_00_plp_standard.jpg",
+        "price": 272,
+        "href": "https://www.adidas.com/us"
+    }
+]
 
 
-// console.log(module.exports.getProduct(5, (err, result) => {
-//   console.log(result)
-// }))
+
+*/
