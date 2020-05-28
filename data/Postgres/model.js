@@ -6,9 +6,10 @@ module.exports = {
         .query(`SELECT related_products FROM shoes WHERE id = '${id}';`)
         .then((res) => {
           var resarr = res.rows[0].related_products
+          console.log(resarr)
           return resarr.map(item => {
             return client
-                    .query(`SELECT id, title, images, price, href FROM shoes WHERE id = '${item}';`)
+                    .query(`SELECT id, shoe_id, title, images, price, href FROM shoes WHERE shoe_id = '${item}';`)
                     .then((res) => {
                       return res.rows[0]
                     })

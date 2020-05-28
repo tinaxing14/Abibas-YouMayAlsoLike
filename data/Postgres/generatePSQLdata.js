@@ -4,7 +4,7 @@ const randomnames = fakerator();
 
 
 //base entries
-var entries = 20000;
+var entries = 100;
 
 //generate postgres data
 const generateShoesId = () => {
@@ -46,7 +46,7 @@ const shoesIdArr = generateShoesIdArr();
 const generateRelatedProductsData = () => {
   var arr = [];
   for (var i = 0; i < 12; i++) {
-    arr.push(Math.floor(Math.random()* entries));
+    arr.push(shoesIdArr[Math.floor(Math.random()* shoesIdArr.length)]);
   }
   var string = JSON.stringify(arr);
   //change array to string with "{}" for postgres array format.

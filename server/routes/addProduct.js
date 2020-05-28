@@ -1,5 +1,5 @@
 const express = require('express');
-const model = require('../../data/Postgres/model.js');
+const model = require('../../data/Mongo/model.js');
 const router = express.Router();
 
 router.post('/', (req, res) => {

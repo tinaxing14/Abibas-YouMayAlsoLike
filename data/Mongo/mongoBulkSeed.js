@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
-const {generateFullShoesArr, generateUsersObjArr} = require('./MongoDataHelpers')
+const {generateFullShoesArr, generateUsersObjArr} = require('./MongoDataHelpers');
 
 var createNewEntries = 
 
@@ -35,22 +35,22 @@ var createNewEntries =
 };
 
 // Use connect method to connect to the server
-MongoClient.connect(url)
-  .then(function(client) {
-    console.log("Connected successfully to server");
-    const db = client.db('abibas');
-    createNewEntries(db, generateFullShoesArr(), "Shoe", function(){
-    client.close()
-    });
-  });
-
-
-// MongoClient.connect(url, function(err, client) {
-//   console.log("Connected successfully to server");
-//   const db = client.db('abibas');
-//   createNewEntries(db,generateUsersObjArr(1000), "User", function(){
+// MongoClient.connect(url)
+//   .then(function(client) {
+//     console.log("Connected successfully to server");
+//     const db = client.db('abibas');
+//     createNewEntries(db, generateFullShoesArr(), "Shoe", function(){
 //     client.close()
+//     });
+//   });
 
-//   })
-// });
+
+MongoClient.connect(url, function(err, client) {
+  console.log("Connected successfully to server");
+  const db = client.db('abibas');
+  createNewEntries(db, generateUsersObjArr(2000000), "User", function(){
+    client.close()
+
+  })
+});
 

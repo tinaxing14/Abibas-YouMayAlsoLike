@@ -55,6 +55,7 @@ const generateUsersObjArr = (n) => {
   let arr =[];
   for (var i = 0; i < n; i ++) {
     var obj = {
+        _id: i + 1,
         userName: generateUsers() ,
         likedShoes: generateLikedShoes()
     }
