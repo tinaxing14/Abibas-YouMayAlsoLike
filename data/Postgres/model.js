@@ -3,13 +3,13 @@ module.exports = {
   getProduct: (id, callback) => {
     pool.connect().then((client) => {
       return client
-        .query(`SELECT related_products FROM shoes WHERE id = '${id}';`)
+        .query(`SELECT related_products FROM shoes WHERE id = '${id}' limit 1;`)
         .then((res) => {
           var resarr = res.rows[0].related_products
           console.log(resarr)
           return resarr.map(item => {
             return client
-                    .query(`SELECT id, shoe_id, title, images, price, href FROM shoes WHERE shoe_id = '${item}';`)
+                    .query(`SELECT id, shoe_id, title, images, price, href FROM shoes WHERE shoe_id = '${item}' limit 1;`)
                     .then((res) => {
                       return res.rows[0]
                     })
