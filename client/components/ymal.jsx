@@ -1,15 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ymalBigMockData } from './__test__/mockdata.js';
+import axios from 'axios';
 
 class YouMayAlsoLike extends React.Component{
 	constructor(props){
 		super(props);
 
 		this.state = {
-			products: ymalBigMockData
-		};
-	}
+			products: []
+    };
+    this.getYMAL = this.getYMAL.bind(this);
+  }
+  
+
+  getYMAL(id) {
+    axios.get(`/api/shoes/${id}/relatedproducts`)
+      .then((data) => {
+        this.setState({products: data.data.relatedProducts});
+      })
+      .catch((err) => {
+        if(err) {
+          console.log(err)
+        }
+      })
+  }
+
+  componentDidMount() {
+    this.getYMAL('NJ4074');
+  }
 
 	render(){
 		return (
@@ -19,7 +37,7 @@ class YouMayAlsoLike extends React.Component{
 			</SectionContainer>
 		);
 	}
-};
+}
 
 const SectionContainer = styled.div`
 	width: 60%;
@@ -50,8 +68,8 @@ class Carousel extends React.Component{
 		};
 
 		this.imageList = React.createRef();
-		this.cardPerPage = 4;
-		this.totalCards = this.props.products.length;
+    this.cardPerPage = 4;
+    this.totalCards = 12;
 
 		this.scrollToPage = (currentPage) => {
 			let el = this.imageList.current;
@@ -60,9 +78,10 @@ class Carousel extends React.Component{
 		}
 
 		this.moveRight = () => {
-			let numberOfPage = Math.ceil(this.totalCards / this.cardPerPage);
+      let numberOfPage = Math.ceil(this.totalCards / this.cardPerPage);
+      console.log("number of page", numberOfPage)
 			let currentPage = this.state.currentPage + 1;
-
+      console.log(currentPage)
 			if(currentPage >= numberOfPage){
 				currentPage = 0;
 			}
@@ -72,7 +91,8 @@ class Carousel extends React.Component{
 
 		this.moveLeft = () => {
 			let lastPage = Math.ceil(this.totalCards / this.cardPerPage) - 1;
-			let currentPage = this.state.currentPage - 1;
+      let currentPage = this.state.currentPage - 1;
+      console.log(currentPage)
 			
 			if(currentPage < 0){
 				currentPage = lastPage;
@@ -235,24 +255,38 @@ class ProductCard extends React.Component{
 	constructor(props){
 		super(props);
 
-		this.state = {};
-	}
+    this.state = {
+      liked: false
+    };
+    this.handleHeartClick = this.handleHeartClick.bind(this);
+  }
+  
+  handleHeartClick(username, productname) {
+    this.setState({liked: !this.state.liked})
+    axios.post('api/shoes/likes', {userid: username,id: productname})
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 
 	render(){
 		let product = this.props.product;
-		let like = product.liked ? '#wishlist-active' : '#wishlist-inactive';
+		let like = this.state.liked ? '#wishlist-active' : '#wishlist-inactive';
 
 		return (
 			<div className={this.props.className}>
-				<div className='heart-icon'>
-					<svg>
+				<div className='heart-icon' onClick={() => {this.handleHeartClick("Jamie Rempel", product.id)}}>
+					<svg >
 						<symbol id="wishlist-inactive" viewBox="0 0 20 24"><path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></symbol>
 						<symbol id="wishlist-active" viewBox="0 0 20 24"><path fill="currentColor" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></symbol>
 						<use href={like}/>
 					</svg>
 				</div>
 				<a href={product.href}>
-					<img className='product-image' src={product.image} />
+					<img className='product-image' src={product.images} />
 					<div className='product-tag'>Originals</div>
 					<div className='product-title'>{product.title}</div>
 					<div className='product-price'>${product.price}</div>
