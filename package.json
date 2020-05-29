@@ -27,6 +27,7 @@
   "homepage": "https://github.com/9-space-lobster/adidas-related-info#readme",
   "dependencies": {
     "aws-sdk": "^2.682.0",
+    "axios": "^0.19.2",
     "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
