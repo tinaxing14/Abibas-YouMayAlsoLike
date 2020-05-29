@@ -4,12 +4,12 @@ const randomnames = fakerator();
 
 
 //base entries
-var entries = 100;
+var entries = 20000;
 
 //generate postgres data
 const generateShoesId = () => {
   const combinations = ['A', 'B', 'C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  let randomLetters = combinations[Math.floor(Math.random() * 26)] + combinations[Math.floor(Math.random() * 26)];
+  let randomLetters = combinations[Math.floor(Math.random() * 26)] + combinations[Math.floor(Math.random() * 26)] + combinations[Math.floor(Math.random() * 26)] + combinations[Math.floor(Math.random() * 26)] + combinations[Math.floor(Math.random() * 26)];
   let randomNums = Math.floor(Math.random()*(9999 - 1000) + 1000);
   return randomLetters + randomNums;
 };
