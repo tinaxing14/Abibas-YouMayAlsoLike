@@ -29,3 +29,6 @@ CREATE TABLE user_likes (
 \copy users(users_name) from '/Users/TinaXING/Downloads/data/users.csv' delimiter ',' csv;
 \copy shoes(shoe_id, title, images, price, href, related_products) from '/Users/TinaXING/Downloads/data/shoes.csv' delimiter ',' csv header;
 \copy user_likes(users_id, shoes_id) from '/Users/TinaXING/Downloads/data/userlikes.csv' delimiter ',' csv header;
+
+CREATE index shoesindex on shoes (shoe_id);
+CREATE index usernamesindex on users (users_name);
