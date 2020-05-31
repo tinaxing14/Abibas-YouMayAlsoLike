@@ -1,3 +1,5 @@
+const newrelic = require('newrelic');
+
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -6,8 +8,6 @@ const likeProduct = require('./routes/likeProduct');
 const addProduct = require('./routes/addProduct.js');
 const deleteProduct = require('./routes/deleteProduct.js');
 const updateProduct = require('./routes/updateProduct.js')
-
-
 
 const app = express();
 const PORT = process.env.INFO_SERVICE_PORT || 3002;

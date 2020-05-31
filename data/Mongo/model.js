@@ -87,4 +87,28 @@ module.exports = {
       }
     });
   },
+
+  getUserNames: (limit, callback) =>{
+    User.find({})
+      .limit(limit)
+      .exec((err, results) => {
+        if(err) {
+          console.log(err)
+        }
+        var arr = results.map(item => item.userName)
+        callback(arr)
+      })
+  },
+
+  getShoeIds: (limit, callback) => {
+    Shoe.find({})
+    .limit(limit)
+    .exec((err, results) => {
+      if(err) {
+        console.log(err)
+      }
+      var arr = results.map(item => item.id)
+      callback(arr)
+    })
+  }
 };
