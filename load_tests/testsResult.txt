@@ -1,0 +1,73 @@
+STRESS TESTS:
+
+
+          /\      |‾‾|  /‾‾/  /‾/   
+     /\  /  \     |  |_/  /  / /    
+    /  \/    \    |      |  /  ‾‾\  
+   /          \   |  |‾\  \ | (_) | 
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local
+     output: -
+     script: load_tests/stress_test.js
+
+    duration: -,  iterations: -
+         vus: 1, max: 600
+
+    done [==========================================================] 23m0s / 23m0s
+
+    ✓ status was 201
+    ✓ status was 200
+    ✓ content was ok
+
+    checks.....................: 100.00% ✓ 517885 ✗ 0    
+    data_received..............: 513 MB  372 kB/s
+    data_sent..................: 51 MB   37 kB/s
+    http_req_blocked...........: avg=6.66µs  min=2µs      med=5µs      max=30.81ms p(90)=7µs   p(95)=9µs  
+    http_req_connecting........: avg=660ns   min=0s       med=0s       max=2.72ms  p(90)=0s    p(95)=0s   
+  ✗ http_req_duration..........: avg=1.09s   min=2.63ms   med=905.79ms max=4.77s   p(90)=2.26s p(95)=2.71s
+    http_req_receiving.........: avg=86.3µs  min=29µs     med=79µs     max=31.46ms p(90)=115µs p(95)=135µs
+    http_req_sending...........: avg=32.58µs min=10µs     med=28µs     max=10.31ms p(90)=44µs  p(95)=56µs 
+    http_req_tls_handshaking...: avg=0s      min=0s       med=0s       max=0s      p(90)=0s    p(95)=0s   
+    http_req_waiting...........: avg=1.09s   min=2.52ms   med=905.67ms max=4.77s   p(90)=2.26s p(95)=2.71s
+    http_reqs..................: 345169  250.122422/s
+    iteration_duration.........: avg=2.28s   min=107.66ms med=1.9s     max=7.65s   p(90)=4.63s p(95)=5.56s
+    iterations.................: 172397  124.925342/s
+    vus........................: 1       min=1    max=599
+    vus_max....................: 600     min=600  max=600
+ 
+SMOKE TESTS:
+          /\      |‾‾|  /‾‾/  /‾/   
+     /\  /  \     |  |_/  /  / /    
+    /  \/    \    |      |  /  ‾‾\  
+   /          \   |  |‾\  \ | (_) | 
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local
+     output: -
+     script: load_tests/smoke_test.js
+
+    duration: 10s, iterations: -
+         vus: 1,   max: 1
+
+    done [==========================================================] 10s / 10s
+
+    ✓ status was 200
+    ✓ content was ok
+    ✓ status was 201
+
+    checks.....................: 100.00% ✓ 30  ✗ 0  
+    data_received..............: 27 kB   2.7 kB/s
+    data_sent..................: 2.7 kB  267 B/s
+    http_req_blocked...........: avg=94.04µs min=4µs    med=5µs     max=1.77ms   p(90)=8.1µs   p(95)=97.4µs  
+    http_req_connecting........: avg=17.2µs  min=0s     med=0s      max=344µs    p(90)=0s      p(95)=17.2µs  
+  ✓ http_req_duration..........: avg=27.44ms min=7.03ms med=12.82ms max=193.86ms p(90)=53.62ms p(95)=93.98ms 
+    http_req_receiving.........: avg=102.5µs min=66µs   med=98.5µs  max=166µs    p(90)=136.6µs p(95)=160.3µs 
+    http_req_sending...........: avg=48.7µs  min=21µs   med=31µs    max=224µs    p(90)=77.6µs  p(95)=124.25µs
+    http_req_tls_handshaking...: avg=0s      min=0s     med=0s      max=0s       p(90)=0s      p(95)=0s      
+    http_req_waiting...........: avg=27.29ms min=6.91ms med=12.69ms max=193.47ms p(90)=53.46ms p(95)=93.76ms 
+    http_reqs..................: 20      1.999941/s
+    iteration_duration.........: avg=1.06s   min=1.02s  med=1.02s   max=1.28s    p(90)=1.11s   p(95)=1.2s    
+    iterations.................: 9       0.899973/s
+    vus........................: 1       min=1 max=1
+    vus_max....................: 1       min=1 max=1
