@@ -3,6 +3,7 @@ const model = require('../../data/Mongo/model.js');
 const router = express.Router();
 
 router.get('/:productid/relatedproducts', (req, res) => {
+  
 	model.getProduct(req.params.productid, ( err, results) => {
     if (err) {
       console.log(err);

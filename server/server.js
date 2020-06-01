@@ -1,4 +1,5 @@
 const newrelic = require('newrelic');
+require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
@@ -7,15 +8,19 @@ const getProduct = require('./routes/getProduct');
 const likeProduct = require('./routes/likeProduct');
 const addProduct = require('./routes/addProduct.js');
 const deleteProduct = require('./routes/deleteProduct.js');
-const updateProduct = require('./routes/updateProduct.js')
+const updateProduct = require('./routes/updateProduct.js');
+
 
 const app = express();
-const PORT = process.env.INFO_SERVICE_PORT || 3002;
+const port = process.env.PORT || 3002;
+
+
 
 app.use(cors())
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.static('./public'));
+
 
 //get product route
 app.use('/api/shoes', getProduct);
@@ -36,6 +41,6 @@ app.use('/api/shoes', deleteProduct);
 app.use('/api/shoes/update', updateProduct);
 
 
-app.listen(PORT, () => {
-  console.log('server is listening on PORT', PORT)
+app.listen(port, () => {
+  console.log('server is listening on PORT', port)
 });
