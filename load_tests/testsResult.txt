@@ -1,5 +1,39 @@
 STRESS TESTS:
 
+          /\      |‾‾|  /‾‾/  /‾/   
+     /\  /  \     |  |_/  /  / /    
+    /  \/    \    |      |  /  ‾‾\  
+   /          \   |  |‾\  \ | (_) | 
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local
+     output: -
+     script: load_tests/stress_test_get.js
+
+    duration: -,  iterations: -
+         vus: 1, max: 1000
+
+    done [==========================================================] 7m0s / 7m0s
+
+    ✓ status was 200
+    ✓ content was ok
+
+    checks.....................: 100.00% ✓ 113200 ✗ 0     
+    data_received..............: 150 MB  356 kB/s
+    data_sent..................: 6.4 MB  15 kB/s
+    http_req_blocked...........: avg=38.97µs  min=3µs      med=8µs   max=38.28ms p(90)=20µs  p(95)=35µs 
+    http_req_connecting........: avg=18.88µs  min=0s       med=0s    max=23.79ms p(90)=0s    p(95)=0s   
+  ✗ http_req_duration..........: avg=4.63s    min=7.34ms   med=5.23s max=16.92s  p(90)=6.4s  p(95)=7.77s
+    http_req_receiving.........: avg=188.76µs min=39µs     med=120µs max=65.1ms  p(90)=234µs p(95)=335µs
+    http_req_sending...........: avg=69.59µs  min=14µs     med=40µs  max=36.95ms p(90)=86µs  p(95)=117µs
+    http_req_tls_handshaking...: avg=0s       min=0s       med=0s    max=0s      p(90)=0s    p(95)=0s   
+    http_req_waiting...........: avg=4.63s    min=7.1ms    med=5.23s max=16.91s  p(90)=6.4s  p(95)=7.77s
+    http_reqs..................: 56600   134.761889/s
+    iteration_duration.........: avg=5.16s    min=508.87ms med=5.74s max=24.41s  p(90)=6.91s p(95)=8.39s
+    iterations.................: 56391   134.26427/s
+    vus........................: 1       min=1    max=999 
+    vus_max....................: 1000    min=1000 max=1000
+
 
           /\      |‾‾|  /‾‾/  /‾/   
      /\  /  \     |  |_/  /  / /    

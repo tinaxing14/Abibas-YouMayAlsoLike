@@ -24,5 +24,6 @@ export default () => {
     "content was ok": (res) => JSON.parse(res.body).relatedProducts.length === 12
   });
 
+  
   sleep(1)
 }
