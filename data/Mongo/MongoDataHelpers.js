@@ -5,7 +5,7 @@ const fakerator = require('fakerator');
 const randomnames = fakerator();
 
 //data base entries
-const entries = 20000
+const entries = 200000
 
 // helper functions to generate random data
 const generateShoesId = () => {
