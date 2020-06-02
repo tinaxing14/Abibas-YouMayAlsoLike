@@ -1,5 +1,6 @@
 const newrelic = require('newrelic');
 require('dotenv').config();
+const path = require('path');
 
 const express = require('express');
 const cors = require('cors');
@@ -19,7 +20,7 @@ const port = process.env.SERVER_PORT;
 app.use(cors())
 app.use(morgan('tiny'));
 app.use(express.json());
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 //get product route

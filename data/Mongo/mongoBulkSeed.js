@@ -45,14 +45,14 @@ var createNewEntries =
 //   });
 
 
-MongoClient.connect(url, function(err, client) {
-  console.log("Connected successfully to server");
-  const db = client.db('abibas');
-  createNewEntries(db, generateUsersObjArr(20000), "User", function(){
-    client.close()
+// MongoClient.connect(url, function(err, client) {
+//   console.log("Connected successfully to server");
+//   const db = client.db('abibas');
+//   createNewEntries(db, generateUsersObjArr(20000), "User", function(){
+//     client.close()
 
-  })
-});
+//   })
+// });
 
 MongoClient.connect(url, function(err, client) {
   console.log("Connected successfully to server");

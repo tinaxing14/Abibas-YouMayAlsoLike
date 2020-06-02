@@ -1,10 +1,8 @@
 const { User, Shoe } = require("./mongodb_schema.js");
-const useCache = require('./cache.js');
 
 module.exports = {
   getProduct: (id, callback) => {
     Shoe.findOne({ id: id })
-      .cache(id)
       .then((result => {
         callback(null, result)
       }))
