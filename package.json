@@ -10,7 +10,7 @@
     "start": "nodemon server/server.js",
     "server": "node server/server.js",
     "babel": "babel --watch client --out-dir public --presets=@babel/preset-react,@babel/preset-env",
-    "webpack": "webpack -d --watch",
+    "webpack": "webpack -p --watch",
     "seed": "mysql -u `cat ./seed/mysql.user` -p`cat ./seed/mysql.pass` < ./seed/schema_data.sql && exit 0",
     "build:docker": "./docker_build.sh",
     "build:prod": "webpack --config webpack.prod.js"
