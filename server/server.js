@@ -12,7 +12,7 @@ const updateProduct = require('./routes/updateProduct.js');
 
 
 const app = express();
-const port = process.env.PORT || 3002;
+const port = process.env.SERVER_PORT;
 
 
 
@@ -42,5 +42,5 @@ app.use('/api/shoes/update', updateProduct);
 
 
 app.listen(port, () => {
-  console.log('server is listening on PORT', port)
+  console.log('server is listening on PORT')
 });
