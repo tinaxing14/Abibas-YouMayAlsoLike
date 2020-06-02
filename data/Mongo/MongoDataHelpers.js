@@ -72,7 +72,7 @@ const generateShoesArr = () => {
   var arr = [];
   for( let i = 0; i < entries; i++) {
     var shoeObj = {
-      "id": shoesIdArr[Math.floor(Math.random() * entries)],
+      "id": i,
       "title": generateTitles(),
       "images": imageArr[Math.floor(Math.random() * imageArr.length)],
       "price": generatePrice(),
