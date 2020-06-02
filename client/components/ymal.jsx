@@ -26,7 +26,7 @@ class YouMayAlsoLike extends React.Component{
   }
 
   componentDidMount() {
-    this.getYMAL('NJ4074');
+    this.getYMAL('2');
   }
 
 	render(){

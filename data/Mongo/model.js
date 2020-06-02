@@ -2,8 +2,10 @@ const { User, Shoe } = require("./mongodb_schema.js");
 
 module.exports = {
   getProduct: (id, callback) => {
-    Shoe.findOne({ id: id })
+    console.log(id)
+    Shoe.findOne({ id: Number(id) })
       .then((result => {
+        console.log(result)
         callback(null, result)
       }))
       .catch((err) => {

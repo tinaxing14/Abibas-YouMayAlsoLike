@@ -1,0 +1,22 @@
+
+   done [==========================================================] 7m0s / 7m0s
+ ✗ status was 200
+↳  99% — ✓ 20380 / ✗ 66
+✗ content was ok
+ ↳  99% — ✓ 20380 / ✗ 66
+
+checks.....................: 99.67% ✓ 40760 ✗ 132  
+data_received..............: 54 MB  127 kB/s
+data_sent..................: 2.2 MB 5.3 kB/s
+http_req_blocked...........: avg=30.21ms  min=0s    med=9µs     max=23.13s   p(90)=16µs    p(95)=31µs    
+http_req_connecting........: avg=30.17ms  min=0s    med=0s      max=23.13s   p(90)=0s      p(95)=0s      
+✓ http_req_duration..........: avg=155.44ms min=0s    med=47.5ms  max=34.03s   p(90)=76.79ms p(95)=102.52ms
+http_req_receiving.........: avg=558.54µs min=0s    med=138µs   max=311.88ms p(90)=420.5µs p(95)=1.21ms  
+http_req_sending...........: avg=131.67µs min=0s    med=44µs    max=44.36ms  p(90)=105µs   p(95)=171µs   
+http_req_tls_handshaking...: avg=0s       min=0s    med=0s      max=0s       p(90)=0s      p(95)=0s      
+http_req_waiting...........: avg=154.75ms min=0s    med=47.11ms max=34.03s   p(90)=76.08ms p(95)=101.09ms
+http_reqs..................: 20446  48.680792/s
+iteration_duration.........: avg=1.2s     min=1.02s med=1.04s   max=34.03s   p(90)=1.09s   p(95)=1.12s   
+iterations.................: 20351  48.454602/s
+vus........................: 1      min=1   max=99 
+vus_max....................: 100    min=100 max=100

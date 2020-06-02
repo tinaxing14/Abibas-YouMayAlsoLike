@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUrl =`mongodb://${process.env.MONGO_HOST}/abibas`;
+const mongoUrl =`mongodb://${process.env.MONGO_HOST}/abibasEC2`;
 
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
@@ -19,7 +19,7 @@ mongoose.connection.on("connected", (err) => {
 const Schema = mongoose.Schema;
 
 const Shoes = new Schema({
-  id: String,
+  id: Number,
   title: String,
   images: String,
   price: Number,
