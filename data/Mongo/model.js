@@ -5,7 +5,6 @@ module.exports = {
     console.log(id)
     Shoe.findOne({ id: Number(id) })
       .then((result => {
-        console.log(result)
         callback(null, result)
       }))
       .catch((err) => {

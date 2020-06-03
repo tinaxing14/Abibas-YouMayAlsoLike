@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUrl =`mongodb://${process.env.MONGO_HOST}/abibasEC2`;
+const mongoUrl =`mongodb://${process.env.MONGO_HOST}/abibas`;
 
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
