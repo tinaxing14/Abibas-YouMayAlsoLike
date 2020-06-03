@@ -5,9 +5,9 @@ const fs = require('fs');
 for (var i = 0; i < 10; i ++) {
   var shoedata = generateFullShoesArr()
   if(i === 0) {
-    fs.writeFileSync(`/Users/TinaXING/Downloads/data/shoes${i}.json`, JSON.stringify(shoedata, null, 0));
+    fs.writeFileSync(`/Users/TinaXING/Downloads/data/shoes.json`, JSON.stringify(shoedata, null, 0));
   } else {
-    fs.appendFileSync(`/Users/TinaXING/Downloads/data/shoes${i}.json`, JSON.stringify(shoedata, null, 0));
+    fs.appendFileSync(`/Users/TinaXING/Downloads/data/shoes.json`, JSON.stringify(shoedata, null, 0));
     console.log(i, '--- one shoes json file completed')
   }
   

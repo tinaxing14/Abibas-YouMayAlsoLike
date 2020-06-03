@@ -4,7 +4,9 @@ import { randomShoe } from "./randomIds.js"
 
 export let options = {
   stages: [
-    { duration: '2m', target: 1000 }
+    { duration: '3m', target: 1000 },
+    { duration: '3m', target: 1000 },
+    { duration: '4m', target: 1000 }
   ],
 
   thresholds: {
@@ -12,7 +14,7 @@ export let options = {
   }
 }
 
-const BASE_URL = 'http://13.59.77.163/api/shoes'; 
+const BASE_URL = 'http://3.22.100.126/api/shoes'; 
 
 export default () => {
   let landPage= http.get(`${BASE_URL}/${Math.floor(Math.random() * 10000)}/relatedproducts`);
