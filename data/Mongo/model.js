@@ -1,9 +1,10 @@
 const { User, Shoe } = require("./mongodb_schema.js");
+const useCache = require('./cache.js');
 
 module.exports = {
   getProduct: (id, callback) => {
-    console.log(id)
     Shoe.findOne({ id: Number(id) })
+      .cache(id)
       .then((result => {
         callback(null, result)
       }))
@@ -17,7 +18,6 @@ module.exports = {
       if (err) {
         console.log(err);
       } else {
-        console.log(results);
         callback(null, results);
       }
     });

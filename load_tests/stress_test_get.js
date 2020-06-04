@@ -4,9 +4,7 @@ import { randomShoe } from "./randomIds.js"
 
 export let options = {
   stages: [
-    { duration: '3m', target: 1000 },
-    { duration: '3m', target: 1000 },
-    { duration: '4m', target: 1000 }
+    { duration: '3m', target: 1500},
   ],
 
   thresholds: {
@@ -14,10 +12,16 @@ export let options = {
   }
 }
 
-const BASE_URL = 'http://3.22.100.126/api/shoes'; 
+const BASE_URL = 'http://18.188.234.135:4200/api/shoes'; 
 
 export default () => {
-  let landPage= http.get(`${BASE_URL}/${Math.floor(Math.random() * 10000)}/relatedproducts`);
+  var random = Math.random();
+  var landPage;
+  if(random < 0.5) {
+    landPage= http.get(`${BASE_URL}/${Math.floor(Math.random() * 50000)}/relatedproducts`);
+  } else {
+    landPage= http.get(`${BASE_URL}/${Math.floor(Math.random() * 10000)}/relatedproducts`);
+  }
   check(landPage, {
     "status was 200": (res) => res.status === 200,
     "content was ok": (res) => JSON.parse(res.body).relatedProducts.length === 12

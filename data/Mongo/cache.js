@@ -6,7 +6,10 @@ const util = require('util');
 
 const port_redis = process.env.REDIS_PORT;
 
-const client = redis.createClient(port_redis);
+const client = redis.createClient({
+  port: '6379',
+  host: '3.22.168.61'
+});
 client.on('connect', (err) => {
   if(err) {
     console.log(err);
@@ -18,11 +21,18 @@ client.on('connect', (err) => {
 client.hget = util.promisify(client.hget);
 
 
-mongoose.Query.prototype.cache = function(hkey, options = { expire:5 }) {
-  this.useCache = true;
-  this.expire = options.expire
-  this.hashKey = JSON.stringify(hkey || '');
-  return this;
+mongoose.Query.prototype.cache = function(hkey, options = { expire:20 }) {
+  // if statement to only cache shoe id < 10000
+  if(hkey < 10000 ) {
+    this.useCache = true;
+    this.expire = options.expire
+    this.hashKey = JSON.stringify(hkey || '');
+    return this;
+  } else {
+    this.useCache = false;
+    return this;
+  }
+
 }
 
 

@@ -1,3 +1,31 @@
+
+    done [==========================================================] 10m0s / 10m0s
+
+    ✓ status was 200
+    ✓ content was ok
+
+    checks.....................: 100.00% ✓ 262246 ✗ 0    
+    data_received..............: 344 MB  573 kB/s
+    data_sent..................: 14 MB   24 kB/s
+    http_req_blocked...........: avg=201.68µs min=2µs     med=7µs      max=671.23ms p(90)=12µs  p(95)=23µs    
+    http_req_connecting........: avg=175.4µs  min=0s      med=0s       max=643.63ms p(90)=0s    p(95)=0s      
+  ✓ http_req_duration..........: avg=792.24ms min=27.35ms med=947.12ms max=2.45s    p(90)=1.11s p(95)=1.14s   
+    http_req_receiving.........: avg=409.89µs min=25µs    med=106µs    max=819.45ms p(90)=362µs p(95)=1.39ms  
+    http_req_sending...........: avg=155.11µs min=10µs    med=34µs     max=765.13ms p(90)=79µs  p(95)=121.89µs
+    http_req_tls_handshaking...: avg=0s       min=0s      med=0s       max=0s       p(90)=0s    p(95)=0s      
+    http_req_waiting...........: avg=791.68ms min=26.94ms med=946.72ms max=1.72s    p(90)=1.11s p(95)=1.14s   
+    http_reqs..................: 131123  218.538276/s
+    iteration_duration.........: avg=1.8s     min=1.02s   med=1.95s    max=7.16s    p(90)=2.12s p(95)=2.14s   
+    iterations.................: 130853  218.088276/s
+    vus........................: 500     min=3    max=500
+    vus_max....................: 500     min=500  max=500
+
+
+
+
+
+
+
 STRESS TEST WITH REDIS:
 
     done [==========================================================] 7m0s / 7m0s
