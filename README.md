@@ -1,4 +1,4 @@
-Back-end system design of a full-stack shoe product microservice
+### Back-end system design of a full-stack shoe product microservice
 
 Microservice was deployed to AWS EC2 and scaled horizontally across twelve EC2 instances behind an NGINX load balancer to handle over 3100 requests per second, with below 500ms latency, simulating production level traffic.
 
