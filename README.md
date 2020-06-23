@@ -7,13 +7,13 @@ Microservice was deployed to AWS EC2 and scaled horizontally across twelve EC2 i
 - The goal of this project was to create the backend to handle:
 - 3,000 requests per second
 - less than 1.0s latency under load
-- less than 1.0% error rate under load
+- less than 2.0% error rate under load
 
 ## Outcome - Stress Test Metrics
 
 - 3,100+ requests per second
-- 0.5s latency 
-- 0.0% error rate
+- 0.24s latency 
+- 1.0% error rate
 
 ![Choose Date](https://i.imgur.com/lPudaL7.png?1)
 
