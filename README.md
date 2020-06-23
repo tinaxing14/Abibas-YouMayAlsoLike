@@ -1,8 +1,19 @@
-### Back-end system design of a full-stack shoe product microservice
+### Back-end system design of a full-stack shoe e-commerce microservice
 
 Microservice was deployed to AWS EC2 and scaled horizontally across twelve EC2 instances behind an NGINX load balancer to handle over 3100 requests per second, with below 500ms latency, simulating production level traffic.
 
-## Stress Test Metrics
+
+## Project Goals
+- The goal of this project was to create the backend to handle:
+- 3,000 requests per second
+- less than 1.0s latency under load
+- less than 1.0% error rate under load
+
+## Outcome - Stress Test Metrics
+
+- 3,100+ requests per second
+- 0.5s latency 
+- 0.0% error rate
 
 ![Choose Date](https://i.imgur.com/lPudaL7.png?1)
 
